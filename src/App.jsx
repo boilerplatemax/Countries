@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import CountryResults from "./components/CountryResults";
+import Spinner from "./components/Spinner";
 import { getAllCountries } from "./services/countries";
 import { getWeather } from "./services/weather";
 
@@ -65,7 +66,7 @@ const filteredCountries =
 
 
   
-  if (!countries) return <div>Loading...</div>;
+  if (!countries) return <Spinner/>;
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center py-12 px-6">
       <div className="w-full max-w-5xl bg-white rounded-xl shadow-md p-8 lg:p-12">
